@@ -13,4 +13,8 @@ describe('weight-based dose', () => {
   it('REQ-DOSE-003: rejects a non-positive weight', () => {
     expect(() => weightBasedDoseMg({ weightKg: 0, mgPerKg: 5, maxMg: 500 })).toThrow(RangeError);
   });
+
+  it('REQ-DOSE-002: a dose exactly at the maximum is allowed', () => {
+    expect(weightBasedDoseMg({ weightKg: 100, mgPerKg: 5, maxMg: 500 })).toBe(500);
+  });
 });
