@@ -1,6 +1,6 @@
 {
   "name": "regops-pilot-device",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "A tiny, fictional medical-device software component used as a pilot source repository for RegOps (RegBuild adapters). Not a real device.",
   "type": "module",
