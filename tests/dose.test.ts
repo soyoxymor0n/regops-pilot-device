@@ -17,4 +17,8 @@ describe('weight-based dose', () => {
   it('REQ-DOSE-002: a dose exactly at the maximum is allowed', () => {
     expect(weightBasedDoseMg({ weightKg: 100, mgPerKg: 5, maxMg: 500 })).toBe(500);
   });
+
+  it('REQ-DOSE-005: the dose is rounded to 0.1 mg', () => {
+    expect(weightBasedDoseMg({ weightKg: 3.33, mgPerKg: 1.11, maxMg: 500 })).toBe(3.7);
+  });
 });

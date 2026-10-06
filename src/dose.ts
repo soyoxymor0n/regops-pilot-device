@@ -14,5 +14,5 @@ export function weightBasedDoseMg(input: DoseInput): number {
   if (!Number.isFinite(mgPerKg) || mgPerKg <= 0) throw new RangeError('mgPerKg must be a positive number');
   if (!Number.isFinite(maxMg) || maxMg <= 0) throw new RangeError('maxMg must be a positive number');
   const raw = weightKg * mgPerKg;
-  return Math.min(raw, maxMg);
+  return Math.round(Math.min(raw, maxMg) * 10) / 10;
 }
